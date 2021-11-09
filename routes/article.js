@@ -1,4 +1,4 @@
-const express = require("exrpress");
+const express = require("express");
 const router = express.Router();
 const firestore = require("firebase/firestore");
 const db = firestore.getFirestore();
@@ -11,7 +11,6 @@ router.get("/:id", (req, res) => {
       const post = response.data();
       if (post) return res.send(post);
       return res.send(`No doc.. sorry`);
-      res.send(response.data());
     })
     .catch(function (error) {
       res.send(`No doc.. sorry`);
